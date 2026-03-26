@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 
 const cinematicVideos = [
@@ -23,7 +22,7 @@ export default function Works() {
     <section id="works" className="py-24 px-6 md:px-12 bg-[#FDFBF7] dark:bg-[#121212] transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">Video<br/>Projects</h2>
+          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">Video<br />Projects</h2>
         </div>
 
         {/* Cinematic Videos (16:9) */}
@@ -31,28 +30,26 @@ export default function Works() {
           <h3 className="text-2xl font-bold mb-8 uppercase tracking-wider text-gray-400 dark:text-gray-500 transition-colors duration-300">Cinematic Edits</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {cinematicVideos.map((video, i) => (
-              <motion.div 
+              <div
                 key={i}
                 onClick={() => setSelectedVideo(video.id)}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group block relative overflow-hidden rounded-2xl aspect-video bg-[#232021] cursor-pointer"
+                style={{ '--index': i, '--count': cinematicVideos.length } as React.CSSProperties}
+                className="css-animate-card group block relative overflow-hidden rounded-2xl aspect-video bg-[#232021] cursor-pointer"
               >
-                <img 
-                  src={video.thumb} 
-                  alt="Video Thumbnail" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                <img
+                  src={video.thumb}
+                  alt="Video Thumbnail"
+                  className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105 opacity-80 group-hover:opacity-30"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-lg transform transition-transform duration-300 group-hover:scale-110">
+                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-lg mb-4 transform scale-90 transition-transform duration-300 group-hover:scale-100">
                     <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </div>
+                  <h4 className="text-white font-bold text-xl uppercase tracking-widest">Cinematic Project</h4>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -62,28 +59,26 @@ export default function Works() {
           <h3 className="text-2xl font-bold mb-8 uppercase tracking-wider text-gray-400 dark:text-gray-500 transition-colors duration-300">Short-form Content</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {shortVideos.map((video, i) => (
-              <motion.div 
+              <div
                 key={i}
                 onClick={() => setSelectedVideo(video.id)}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group block relative overflow-hidden rounded-2xl aspect-[9/16] bg-[#232021] cursor-pointer"
+                style={{ '--index': i, '--count': shortVideos.length } as React.CSSProperties}
+                className="css-animate-card group block relative overflow-hidden rounded-2xl aspect-[9/16] bg-[#232021] cursor-pointer"
               >
-                <img 
-                  src={video.thumb} 
-                  alt="Video Thumbnail" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                <img
+                  src={video.thumb}
+                  alt="Video Thumbnail"
+                  className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105 opacity-80 group-hover:opacity-30"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-lg transform transition-transform duration-300 group-hover:scale-110">
+                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-lg mb-3 transform scale-90 transition-transform duration-300 group-hover:scale-100">
                     <svg className="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </div>
+                  <h4 className="text-white font-bold text-sm uppercase tracking-widest text-center">Short Format</h4>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -91,42 +86,34 @@ export default function Works() {
       </div>
 
       {/* Video Modal */}
-      <AnimatePresence>
-        {selectedVideo && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+      {selectedVideo && (
+        <div
+          onClick={() => setSelectedVideo(null)}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 md:p-12 animate-in fade-in duration-300"
+        >
+          <button
             onClick={() => setSelectedVideo(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 md:p-12"
+            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors bg-black/50 rounded-full p-2"
           >
-            <button 
-              onClick={() => setSelectedVideo(null)}
-              className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors bg-black/50 rounded-full p-2"
-            >
-              <X className="w-8 h-8" />
-            </button>
-            <motion.div 
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl relative"
-            >
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0"
-              ></iframe>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <X className="w-8 h-8" />
+          </button>
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl relative animate-in zoom-in-95 duration-300"
+          >
+            <iframe
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0"
+            ></iframe>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

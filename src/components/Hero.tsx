@@ -12,11 +12,11 @@ export default function Hero() {
 
       {/* Background Text "Hey, there" */}
       <div className="absolute top-[35%] md:top-[20%] w-full flex justify-center pointer-events-none z-0">
-        <motion.h1 
+        <motion.h1
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="text-[22vw] md:text-[18vw] leading-none font-serif italic text-[#232021] dark:text-white/10 whitespace-nowrap flex gap-[4vw] md:gap-[6vw] transition-colors duration-300"
+          className="text-[22vw] md:text-[18vw] leading-none font-serif italic text-[#232021]/15 dark:text-white/10 whitespace-nowrap flex gap-[4vw] md:gap-[6vw] transition-colors duration-300"
         >
           <span>Hey,</span>
           <span>there</span>
@@ -24,22 +24,22 @@ export default function Hero() {
       </div>
 
       {/* Center Image */}
-      <motion.div 
+      <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] md:w-[80%] max-w-[500px] z-10 pointer-events-none flex justify-center"
       >
-        <img 
-          src="https://onecdn.io/media/9d0db6d1-52df-47a1-9e67-6929905fb868/lg" 
-          alt="Alejandro" 
+        <img
+          src="https://onecdn.io/media/9d0db6d1-52df-47a1-9e67-6929905fb868/lg"
+          alt="Alejandro"
           className="w-full h-auto object-cover rounded-t-[250px]"
           style={{ maskImage: 'linear-gradient(to top, transparent 0%, black 20%)', WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 20%)' }}
         />
       </motion.div>
 
       {/* Left Text: I AM ALEJANDRO */}
-      <motion.div 
+      <motion.div
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -50,7 +50,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Right Text: AI AGENT BUILDER */}
-      <motion.div 
+      <motion.div
         initial={{ x: 50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
@@ -62,7 +62,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Floating Badge Left */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1 }}
@@ -76,13 +76,13 @@ export default function Hero() {
       </motion.div>
 
       {/* Floating Text Right */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.2 }}
         className="absolute top-[30%] md:top-[45%] right-6 md:right-12 z-20 max-w-[150px] md:max-w-[200px] text-right hidden sm:block"
       >
-        <p className="text-xs md:text-sm font-medium leading-tight dark:text-white/80 transition-colors duration-300">
+        <p className="text-xs md:text-sm font-medium leading-tight text-[#232021] dark:text-white/80 transition-colors duration-300">
           Specialized in Generative AI, Content Creation, and Videography.
         </p>
       </motion.div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 
 const tools = [
   { name: 'Adobe Lightroom', desc: 'Enhanced and refined imagery', icon: '📸' },
@@ -17,25 +16,22 @@ export default function Skills() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row gap-12 mb-16">
           <div className="md:w-1/3">
-            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6">Tools &<br/>Skills</h2>
+            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6">Tools &<br />Skills</h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 transition-colors duration-300">
               With a deep focus on digital content and brand communication, I transform complex ideas into clear visual experiences that drive measurable results.
             </p>
           </div>
           <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {tools.map((tool, i) => (
-              <motion.div 
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-6 rounded-2xl bg-[#F6F6F6] dark:bg-[#232021] hover:bg-primary dark:hover:bg-primary hover:text-white transition-colors group cursor-pointer"
+                style={{ '--index': i, '--count': tools.length } as React.CSSProperties}
+                className="css-animate-card p-6 rounded-2xl border border-black/5 dark:border-white/5 bg-[#F6F6F6] dark:bg-[#232021] hover:bg-primary dark:hover:bg-primary hover:text-white transition-all duration-300 group cursor-pointer"
               >
-                <div className="text-4xl mb-4">{tool.icon}</div>
+                <div className="text-4xl mb-4 transform transition-transform duration-300 group-hover:scale-110 inline-block">{tool.icon}</div>
                 <h3 className="text-xl font-bold mb-2">{tool.name}</h3>
                 <p className="text-sm opacity-70 group-hover:opacity-90">{tool.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
