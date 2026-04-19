@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileHeart, GraduationCap, MapPin, Sparkles } from 'lucide-react';
+import { GraduationCap, Languages, MapPin, Zap } from 'lucide-react';
 
 export default function About() {
     return (
@@ -22,7 +22,7 @@ export default function About() {
                     <div className="lg:col-span-7 space-y-8">
                         <div className="prose prose-lg dark:prose-invert max-w-none text-[#232021]/80 dark:text-white/80 css-animate-slide">
                             <p className="text-xl md:text-2xl font-serif italic text-[#232021] dark:text-white leading-relaxed mb-8 border-l-4 border-primary pl-6">
-                                "I believe technology shouldn't just automate tasks—it should amplify human creativity and create memorable experiences."
+                                "The best content doesn't come from AI or humans alone — it comes from creators who know how to direct both."
                             </p>
 
                             <div className="space-y-6 text-lg">
@@ -33,7 +33,7 @@ export default function About() {
                                     As I delved deeper into the digital world, I discovered the power of automation and artificial intelligence. The transition from capturing moments to building intelligent systems felt natural to me. Both require an eye for detail, an understanding of the user journey, and a touch of creativity.
                                 </p>
                                 <p>
-                                    Today, I build AI agents, design modern architectures, and craft digital experiences that feel both intuitive and premium. I thrive on the intersection of design (UI/UX) and intelligent backend engineering.
+                                    Today, I create video content and build AI automations that help marketing teams ship faster. I work best at the intersection of storytelling and systems — where creative instincts meet automated production.
                                 </p>
                             </div>
                         </div>
@@ -45,16 +45,16 @@ export default function About() {
                                 <span>Germany</span>
                             </div>
                             <div className="flex items-center gap-3 text-[#232021]/70 dark:text-white/70">
+                                <Languages className="w-5 h-5 text-primary" />
+                                <span>DE · ES · EN</span>
+                            </div>
+                            <div className="flex items-center gap-3 text-[#232021]/70 dark:text-white/70">
                                 <GraduationCap className="w-5 h-5 text-primary" />
-                                <span>Continuous Learner</span>
+                                <span>Media &amp; Communication</span>
                             </div>
                             <div className="flex items-center gap-3 text-[#232021]/70 dark:text-white/70">
-                                <Sparkles className="w-5 h-5 text-primary" />
-                                <span>AI Enthusiast</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-[#232021]/70 dark:text-white/70">
-                                <FileHeart className="w-5 h-5 text-primary" />
-                                <span>Creative Problem Solver</span>
+                                <Zap className="w-5 h-5 text-primary" />
+                                <span>AI-native Content</span>
                             </div>
                         </div>
                     </div>

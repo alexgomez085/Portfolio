@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Marquee from './components/Marquee';
 import LogoMarquee from './components/LogoMarquee';
 import Works from './components/Works';
+import AIAutomation from './components/AIAutomation';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import About from './components/About';
@@ -21,6 +22,7 @@ export default function App() {
         <Marquee />
         <Skills />
         <Works />
+        <AIAutomation />
         <LogoMarquee />
         <Experience />
       </main>

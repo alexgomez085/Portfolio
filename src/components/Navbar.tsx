@@ -3,6 +3,8 @@ import { motion } from 'motion/react';
 import { Moon, Sun } from 'lucide-react';
 
 export default function Navbar() {
+  const [isHydrated, setIsHydrated] = useState(false);
+  useEffect(() => { setIsHydrated(true); }, []);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkSection, setIsDarkSection] = useState(false);
 
@@ -63,7 +65,7 @@ export default function Navbar() {
 
   return (
     <motion.header
-      initial={{ y: -100, opacity: 0 }}
+      initial={isHydrated ? { y: -100, opacity: 0 } : false}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-4 left-4 right-4 md:left-12 md:right-12 z-50 flex items-center justify-between px-6 py-4 border border-black/5 dark:border-white/10 backdrop-blur-md rounded-full transition-colors duration-300 ${isDarkSection || isDarkMode ? 'bg-black/80 text-white' : 'bg-white/80 text-[#232021]'
@@ -76,6 +78,7 @@ export default function Navbar() {
         <a href="#about" className="hover:opacity-70 transition-opacity duration-300">About</a>
         <a href="#services" className="hover:opacity-70 transition-opacity duration-300">Skills</a>
         <a href="#works" className="hover:opacity-70 transition-opacity duration-300">Projects</a>
+        <a href="#ai-automation" className="hover:opacity-70 transition-opacity duration-300">AI</a>
         <a href="#experience" className="hover:opacity-70 transition-opacity duration-300">Experience</a>
       </nav>
 
