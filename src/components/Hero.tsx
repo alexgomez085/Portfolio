@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 
 export default function Hero() {
-  const [isHydrated, setIsHydrated] = useState(false);
-  useEffect(() => { setIsHydrated(true); }, []);
-
   return (
     <section id="home" className="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-[#FDFBF7] dark:bg-[#121212] transition-colors duration-300">
       {/* Background Gradient */}
@@ -16,7 +13,7 @@ export default function Hero() {
       {/* Background Text "Hey, there" */}
       <div className="absolute top-[35%] md:top-[20%] w-full flex justify-center pointer-events-none z-0">
         <motion.h1
-          initial={isHydrated ? { scale: 0.9, opacity: 0 } : false}
+          initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="text-[22vw] md:text-[18vw] leading-none font-serif italic text-[#232021]/15 dark:text-white/10 whitespace-nowrap flex gap-[4vw] md:gap-[6vw] transition-colors duration-300"
@@ -28,7 +25,7 @@ export default function Hero() {
 
       {/* Center Image */}
       <motion.div
-        initial={isHydrated ? { y: 100, opacity: 0 } : false}
+        initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] md:w-[80%] max-w-[500px] z-10 pointer-events-none flex justify-center"
@@ -43,7 +40,7 @@ export default function Hero() {
 
       {/* Left Text: CONTENT CREATOR */}
       <motion.div
-        initial={isHydrated ? { x: -50, opacity: 0 } : false}
+        initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
         className="absolute bottom-[30%] md:bottom-[10%] left-4 md:left-12 z-20 flex flex-col"
@@ -54,7 +51,7 @@ export default function Hero() {
 
       {/* Right Text: POWERED BY AI & STRATEGY */}
       <motion.div
-        initial={isHydrated ? { x: 50, opacity: 0 } : false}
+        initial={{ x: 50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
         className="absolute bottom-[15%] md:bottom-[10%] right-4 md:right-12 z-20 flex flex-col text-right"
@@ -67,7 +64,7 @@ export default function Hero() {
       {/* Floating Badges Left */}
       <div className="absolute top-[15%] md:top-[45%] left-1/2 -translate-x-1/2 md:translate-x-0 md:left-12 z-20 flex flex-col md:flex-row gap-3 items-center md:items-start">
         <motion.div
-          initial={isHydrated ? { opacity: 0, y: 20 } : false}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
           className="bg-white/80 dark:bg-black/80 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-3 shadow-sm border border-black/5 dark:border-white/10 w-max transition-colors duration-300"
@@ -80,7 +77,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          initial={isHydrated ? { opacity: 0, y: 20 } : false}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
           className="bg-[#232021] text-white dark:bg-white dark:text-[#232021] backdrop-blur-md px-4 py-2 rounded-full flex items-center shadow-sm w-max transition-colors duration-300"
@@ -91,7 +88,7 @@ export default function Hero() {
 
       {/* Floating Text Right */}
       <motion.div
-        initial={isHydrated ? { opacity: 0, y: 20 } : false}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.2 }}
         className="absolute top-[30%] md:top-[45%] right-6 md:right-12 z-20 max-w-[150px] md:max-w-[200px] text-right hidden sm:block"

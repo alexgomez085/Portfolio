@@ -40,7 +40,7 @@ body {
 }
 
 /* Animations that we will reuse */
-html.js-loaded .css-animate-card {
+.css-animate-card {
   --index: 0;
   --count: 4;
   --entry-start: 20%;
@@ -52,7 +52,7 @@ html.js-loaded .css-animate-card {
   animation-range: entry var(--entry) contain 50%;
 }
 
-html.js-loaded .css-animate-slide {
+.css-animate-slide {
   animation: calendarSmallAppear 1ms cubic-bezier(0.17, 0.67, 0.34, 1.36) forwards;
   animation-timeline: view(block);
   animation-range: entry 10% contain 40%;

@@ -34,17 +34,5 @@ function Router() {
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Router />
-  </StrictMode>,
+  </StrictMode>
 );
-
-document.documentElement.classList.add('js-loaded');
-
-import { hydrateRoot, createRoot } from 'react-dom/client';
-
-const rootElement = document.getElementById('root')!;
-
-if (rootElement.hasChildNodes()) {
-  hydrateRoot(rootElement, <App />);
-} else {
-  createRoot(rootElement).render(<App />);
-}
