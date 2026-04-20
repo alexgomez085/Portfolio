@@ -20,8 +20,8 @@
     rect { fill: #1A1A1A !important; stroke: rgba(255,255,255,0.1) !important; }
     mask rect { fill: white !important; stroke: none !important; }
     mask rect[fill="black"] { fill: black !important; }
-    text { fill: #FFFFFF !important; }
-    line, path, polygon, polyline { stroke: #FFFFFF !important; }
+    text { fill: #D92431 !important; }
+    line, path, polygon, polyline { stroke: #D92431 !important; }
   }
 </style>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
